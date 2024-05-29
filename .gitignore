@@ -1,2 +1,5 @@
 node_modules
 .env
+coverage
+# Exclude pnpm-lock.yaml because it will need to re-create this relative to local folder anyway
+# pnpm-lock.yaml
