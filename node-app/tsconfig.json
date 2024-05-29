@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "allowJs": true, /* maybe not necessary since we are using a copy script to copy all file formats, including .graphql and .js, ie not .ts */
+    "checkJs": false,
+    "strict": true,
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["dom", "es6", "es5", "es2017", "esnext.asynciterable"],
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "removeComments": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true, /* Needed for .graphql imports - Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+    "noUnusedParameters": false, // Todo: after update to eslint. This is to allow  _ in mutation...eg:  addPlayer: async (_, args) =>, as its the first variable. eslint can have granular check to allow _
+    "skipLibCheck": false, /* set to true to fix problems with tsc compile duplications, mongoose, mocha conflicts with jest etc - or downgrade mongoose to ^5.10.19*/
+    "paths": {
+      "src/*":  ["src/*"]
+    },
+    "rootDir": "./",
+    "outDir": "dist"
+  },
+  "exclude": ["node_modules"],
+  "include": ["src"]
+}
