@@ -29,5 +29,5 @@ symlinkFile () {
   fi
 }
 
-symlinkFile "/temp/conf/pg_hba.conf" "/var/postgresql/data/pg_hba.conf"
-symlinkFile "/temp/conf/postgresql.conf" "/var/postgresql/data/postgresql.conf"
+symlinkFile "/temp/conf/pg_hba.conf" "/var/lib/postgresql/data/pg_hba.conf"
+symlinkFile "/temp/conf/postgresql.conf" "/var/lib/postgresql/data/postgresql.conf"

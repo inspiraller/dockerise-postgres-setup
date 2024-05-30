@@ -2,10 +2,11 @@
   "name": "app",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/server.js",
   "scripts": {
     "start": "nodemon -r dotenv/config src/server.ts dotenv_config_path=\".env\"",
-    "test": "jest __tests__/* --env=node --coverage --runInBand"
+    "test": "jest __tests__/* --env=node --coverage --runInBand",
+    "nodetest": "ts-node nodetest"
+
   },
   "keywords": [],
   "author": "",
