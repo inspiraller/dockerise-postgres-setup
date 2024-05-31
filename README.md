@@ -36,6 +36,10 @@ done!
 ## Debug inside the container
 - docker exec -it mycontainer bash
 
+## Testing files exist
+- docker exec mycontainer bash -c 'ls /scripts/populate-args.sh' && echo 1
+- docker exec mycontainer bash -c 'ls /var/lib/postgresql/data/' | xargs echo
+
 ## Connect to container via psql
 // connect   containername  language username  database
 - docker exec -it mycontainer psql -U mysuperuser -d mydb

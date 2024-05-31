@@ -1,5 +1,4 @@
 import dotEnv from "dotenv";
-import { describe, it, expect } from "@jest/globals";
 import { DatabasePool, createPool, sql } from "slonik";
 
 dotEnv.config();

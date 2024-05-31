@@ -11,13 +11,6 @@ module.exports = {
   setupFiles: ["dotenv/config"],
   moduleDirectories: ["node_modules", "src"],
   testEnvironment: "node",
-  globals: {
-    "ts-jest": {
-      diagnostics: {
-        warnOnly: true,
-      },
-    },
-  },
   reporters: ["default"],
   coveragePathIgnorePatterns: ["node_modules"],
   collectCoverageFrom: ["src/*.{t,j}s{,x}", "src/**/*.{t,j}s{,x}"],
