@@ -3,6 +3,10 @@ services:
   db:
     container_name: $PG_CONTAINER
     image: postgres
+    # command:
+    #   -c ssl=on 
+    #   -c ssl_cert_file=/temp/ssl/server.crt 
+    #   -c ssl_key_file=/temp/ssl/server.key
     environment:
       - POSTGRES_DB=$PG_DB
       - POSTGRES_USER=$PG_USER
@@ -16,19 +20,9 @@ services:
           - "5432:5432"
     restart: unless-stopped
 
-    # Copy-data on- docker-entrypoint-initdb 
     # volumes:
-       # seed.sql 
-       #   Passing variables to seed.sql means it needs to be provided in Dockerfile build
-       #   Dockerfile Adds this instead, and then runs a bashscript to replace arg variables
-       #- ./scripts/seed.sql:/docker-entrypoint-initdb.d/seed.sql
-
-       # postgressql_data
-       #   Copy data in Docker file to prevent unnecessary bind mount
-       #   Then run this initscript: 
-       # - ./postgresql_data:/temp
-       # - ./scripts/copy-data.sh:/docker-entrypoint-initdb.d/copy-data.sh:ro
-       # - ./scripts/sym-conf.sh:/docker-entrypoint-initdb.d/sym-conf.sh:ro
+    #   - ./postgresql_data/ssl/server.crt:/temp/ssl/server.crt
+    #   - ./postgresql_data/ssl/server.key:/temp/ssl/server.key
 
 networks:
   pgdata2:
