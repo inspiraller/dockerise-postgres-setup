@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "nodemon -r dotenv/config src/server.ts dotenv_config_path=\".env\"",
+    "start-pg": "nodemon -r dotenv/config src/pg-server.ts dotenv_config_path=\".env\"",
+    "start-slonik": "nodemon -r dotenv/config src/slonik-server.ts dotenv_config_path=\".env\"",
+    "start": "npm run start-slonik",
     "test": "jest __tests__/* --env=node --coverage --runInBand",
     "nodetest": "ts-node nodetest"
-
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,8 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "nodemon": "^2.0.16",
-    "pg": "^8.7.3",
+    "pg": "^8.11.5",
+    "pg-promise": "^11.8.0",
     "slonik": "^28.1.1"
   },
   "devDependencies": {

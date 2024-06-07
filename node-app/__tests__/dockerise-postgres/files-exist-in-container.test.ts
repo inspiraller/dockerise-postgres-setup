@@ -1,21 +1,5 @@
-import { exec } from "child_process";
+import { cmdToOutput, trim } from "__tests__/__test_utils__/cmdToOutput";
 
-const trim = (str: string) =>
-  typeof str === "string" ? str.replace(/[\r\n]+$/, "") : str;
-
-const cmdToOutput = async (script: string) => {
-  const execute = exec(script);
-  let dataAll = "";
-  execute.stdout?.on("data", (data) => {
-    dataAll += data;
-  });
-  return new Promise<string>((resolve, reject) => {
-    execute.stdout?.on("end", () => {
-      resolve(dataAll);
-    });
-    execute.on("error", reject);
-  });
-};
 const FILE_EXISTS = "file exists";
 
 interface PropExistScripts {
