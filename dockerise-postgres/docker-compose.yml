@@ -1,12 +1,12 @@
-version: "3.4"
 services:
   db:
     container_name: $PG_CONTAINER
     image: postgres
-    # command:
-    #   -c ssl=on 
-    #   -c ssl_cert_file=/temp/ssl/server.crt 
-    #   -c ssl_key_file=/temp/ssl/server.key
+    command:
+      -c ssl=on 
+      -c ssl_cert_file=/temp/ssl/server.crt
+      -c ssl_key_file=/temp/ssl/server.key
+      -c ssl_ca_file=/temp/ssl/root.crt
     environment:
       - POSTGRES_DB=$PG_DB
       - POSTGRES_USER=$PG_USER
@@ -19,10 +19,6 @@ services:
     ports:
           - "5432:5432"
     restart: unless-stopped
-
-    # volumes:
-    #   - ./postgresql_data/ssl/server.crt:/temp/ssl/server.crt
-    #   - ./postgresql_data/ssl/server.key:/temp/ssl/server.key
 
 networks:
   pgdata2:

@@ -3,3 +3,4 @@ node_modules
 coverage
 # Will have to update pnpm-lock.yaml per machine or folder anyway - so exclude from repo
 .pnpm-lock.yaml 
+ssl
